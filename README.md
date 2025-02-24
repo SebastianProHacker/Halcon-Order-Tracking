@@ -3,7 +3,7 @@
 ## Description
 **Halcon** is a web application designed to optimize the order management of a building materials distributor. It allows customers to check the status of their orders and employees to manage the life cycle of each order efficiently.
 
-## Main Functionalities.
+## Main Functionalities
 ### For Customers:
 - Consult the status of an order by entering your customer number and invoice number.
 - View photo evidence when the order has been delivered.
