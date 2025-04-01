@@ -11,13 +11,15 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', compact('users')); // ✅ users/index.blade.php
+        // Regresa user.index view
+        return view('users.index', compact('users')); 
     }
 
     public function create()
     {
         $departments = Department::all();
-        return view('users.create', compact('departments')); // ✅ users/create.blade.php
+        // Regresa users.create view
+        return view('users.create', compact('departments'));
     }
 
     public function store(Request $request)
@@ -36,7 +38,8 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $departments = Department::all();
-        return view('users.edit', compact('user', 'departments')); // ✅ users/edit.blade.php
+        // Regresa users.edit view
+        return view('users.edit', compact('user', 'departments')); 
     }
 
     public function update(Request $request, $id)

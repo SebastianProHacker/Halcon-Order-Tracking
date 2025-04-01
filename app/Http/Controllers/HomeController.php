@@ -10,9 +10,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home'); // ✅ matches views/home.blade.php
+        // Regresa home view
+        return view('home');
     }
 
+    // Buscar el order por invoice number
     public function searchOrder(Request $request)
     {
         $request->validate([
@@ -33,6 +35,7 @@ class HomeController extends Controller
             ? OrderEvidence::where('order_id', $order->id)->get()
             : [];
 
-        return view('orders.show', compact('order', 'evidences')); // ✅ using orders/show.blade.php
+        // Regresa orders.show view
+        return view('orders.show', compact('order', 'evidences')); 
     }
 }

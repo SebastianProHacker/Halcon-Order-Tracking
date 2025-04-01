@@ -11,12 +11,14 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::where('is_deleted', false)->orderBy('created_at', 'desc')->get();
-        return view('orders.index', compact('orders')); // ✅ orders/index.blade.php
+        // Regresa orders.index view
+        return view('orders.index', compact('orders')); 
     }
 
     public function create()
     {
-        return view('orders.create'); // ✅ orders/create.blade.php
+        // Regresa orders.create view
+        return view('orders.create'); 
     }
 
     public function store(Request $request)
@@ -48,13 +50,15 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $evidences = OrderEvidence::where('order_id', $order->id)->get();
-        return view('orders.show', compact('order', 'evidences')); // ✅ orders/show.blade.php
+        // Regresa orders.show view
+        return view('orders.show', compact('order', 'evidences')); 
     }
 
     public function edit($id)
     {
         $order = Order::findOrFail($id);
-        return view('orders.edit', compact('order')); // ❌ not found in your views — you should add orders/edit.blade.php
+        // Arreglar el orders index para vista
+        return view('orders.index', compact('order'));
     }
 
     public function update(Request $request, $id)

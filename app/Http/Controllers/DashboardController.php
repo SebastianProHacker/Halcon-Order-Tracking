@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    // Regresa el index o el dashboard
     public function index()
     {
-        return view('dashboard'); // ✅ views/dashboard.blade.php
+        // Regresa dashboard view
+        return view('dashboard'); 
     }
 }
